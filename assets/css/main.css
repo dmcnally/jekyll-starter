@@ -1,24 +1,116 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+/* @import "tailwindcss/base"; */
+/* @import "tailwindcss/components"; */
+/* @import "tailwindcss/utilities"; */
 
 @font-face {
   font-family: "vag-rounded";
   src: url("/assets/fonts/vag-rounded-regular.ttf");
 }
 
+:root { 
+  --text-opacity: 1;
+  --bg-opacity: 1;
+  --border-opacity: 1;
+  --color-white: rgb(255 255 255 / var(--text-opacity));
+  --color-grey: rgb(107 114 128 / var(--text-opacity));
+  --color-black: rgb(17 24 39 / var(--text-opacity));
+  --color-indigo: rgb(55 48 163 / var(--text-opacity));
+  --color-pink: rgb(157 23 77 / var(--text-opacity));
+  --color-green: rgb(22 101 52 / var(--text-opacity));
+  --color-pink: rgb(157 23 77 / var(--text-opacity));
+  --color-bg-indigo: rgb(224 231 255 / var(--bg-opacity));
+  --color-bg-pink: rgb(252 231 243 / var(--bg-opacity));
+  --color-bg-green: rgb(220 252 231 / var(--bg-opacity));
+  --color-border-grey: rgb(229 231 235 / var(--border-opacity));
+
+  --breakpoint-md: 768px;
+}
+
+html {
+  padding: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  color: var(--color-border-grey);
+  border-color: var(--color-border-grey);
+}
+
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  background-color: var(--color-indigo);
+  padding: 4rem 1rem;
+}
+
+.jumbotron__title, .jumbotron__subtitle {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.jumbotron__cta {
+  opacity: 0.8;
+}
+
+.content {
+  margin: 0;
+  padding: 2rem 4rem;
+}
 
 .title {
-  font-family: "vag-rounded", sans-serif;
-  text-color: #999999;
+  /* padding: 2rem 0; */
+  font-size: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--color-border-grey);
 }
 
-/* TODO: Make this appear open by default on larger screens */
-/*details > summary {
-  list-style: none;
+.lozenge {
+  display: inline-block;
+  border-radius: 1rem;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.125rem 0.75rem;
 }
-*/
 
-p {
-  @apply pt-4;
+.lozenge--indigo {
+  color: var(--color-indigo);
+  background-color: var(--color-bg-indigo);
+}
+
+.lozenge--pink {
+  color: var(--color-pink);
+  background-color: var(--color-bg-pink);
+}
+
+.lozenge--green {
+  color: var(--color-green);
+  background-color: var(--color-bg-green);
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* When on larger screens */
+@media (min-width: 768px) {
+  .features {
+    flex-direction: row;
+  }
+}
+
+.feature__paragraph {
+  color: var(--color-grey);
 }
